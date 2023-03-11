@@ -2,55 +2,106 @@ body {
     background-color: blanchedalmond;
 }
 
+h1 {
+    font-size: 2em;
+}
+
+@media (min-width: 820px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 3.5em;
+    }
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+@media (min-width: 820px) {
+    h2 {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1920px) {
+    h2 {
+        font-size: 2.5em;
+    }
+}
+
+.meme-img {
+    width: 30vw;
+}
+
+.section-meme {
+    margin: 1rem 0;
+
+}
+
 .section-meme h1 {
-    padding: 0.1% 27%;
+    padding: 0.1% 25%;
 
 }
 
+.meme-label{
+    cursor: pointer;
+}
 
-.meme-label h2:before {
+.meme-label-h2 {
+    color: blue;
+}
+
+.meme-label-h2::after {
     content: '\002B';
+    opacity: 0;
     float: right;
-    
+    transition: transform .35s;
+
 }
 
-.meme-container input:checked + .meme-label h2:before { 
+.meme-container input:checked + label h2::after {
     transition: transform .35s;
     transform: rotate(45deg);
 }
 
-.acor-body {
+.meme-container input:checked + .meme-label .meme-label-h2 {
+    color: black;
+}
+
+.acor-content {
     display: flex;
     justify-content: center;
-    /* transform: scale(1); */
-    height: 0;
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
     /* transition: color 0.5s, padding 0.5s; */
-    transition: transform .35s;
-
+    transition: all 1s ease-in;
+    cursor:pointer;
 }
 
-.meme-container input:checked + label + .acor-body {
-    height: auto;
+.meme-container input:checked + label + .acor-content {
+    max-height: 100%;
+    opacity: 1;
     padding: 20px 30px 10px;
+    transition: all 0.5s ease-in
 }
 
-.meme-container .acor-body{
+
+
+.meme-container .acor-content {
     padding: 0 30px;
-    transition: color 0.5s, padding 0.5s;
- 
+    /* transition: color 0.5s, padding 0.5s; */
+
 }
 
-
-
-/* .meme-conteiner input:checked { 
-    outline: 2px solid deeppink;
-    } */
-
-
-/* .meme-container input {
-        display: none;
-} */
+.meme-container input {
+    display: none;
+}
 
 .meme-container label {
     padding: 1 rem;
@@ -59,12 +110,34 @@ body {
 .meme-label {
     display: block;
     padding: 0.1% 0%;
-    margin: 0% 27%;
+    margin: 0% 5%;
     background: rgb(30, 210, 114);
 }
 
-.acor-body {
-    
+@media (min-width: 820px) {
+    .meme-label {
+        /* padding: 0.1% 0%;
+        margin: 0% 25%; */
+    }
+    .meme-container{
+        padding: 0.1% 0%;
+        margin: 0% 25%;
+    }
+    .meme-container:hover .meme-label .meme-label-h2::after {
+        opacity: 1;
+    }
+    .meme-container:hover .meme-label .meme-label-h2 {
+        color: black;
+    }
+
+    .meme-block:hover ~ .acor-content {
+        max-height: 100%;
+        opacity: 1;
+        transition: all 0.5s ease-in
+    }
+
 }
+
+.acor-content {}
 
 /* git commit -m "init: add README($(get-date -format U))" */

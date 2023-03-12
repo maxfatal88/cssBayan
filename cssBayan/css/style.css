@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
     background-color: blanchedalmond;
 }
 
 h1 {
     font-size: 2em;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 820px) {
@@ -20,6 +23,7 @@ h1 {
 
 h2 {
     font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 820px) {
@@ -35,7 +39,8 @@ h2 {
 }
 
 .meme-img {
-    width: 30vw;
+    width: 50vw;
+    margin: 0.9em;
 }
 
 .section-meme {
@@ -43,12 +48,13 @@ h2 {
 
 }
 
-.section-meme h1 {
-    padding: 0.1% 25%;
+header h1 {
+    display: flex;
+    justify-content: center;
 
 }
 
-.meme-label{
+.meme-label {
     cursor: pointer;
 }
 
@@ -56,20 +62,24 @@ h2 {
     color: blue;
 }
 
-.meme-label-h2::after {
-    content: '\002B';
-    opacity: 0;
-    float: right;
-    transition: transform .35s;
-
+.meme-label-h2 {
+    display: flex;
+    justify-content: center;
+    padding: 0.2em;
 }
 
-.meme-container input:checked + label h2::after {
+.icon-open {
+    display: none;
+    opacity: 0;
+    transition: transform .35s;
+}
+
+.meme-container input:checked+.acor-header .icon-open {
     transition: transform .35s;
     transform: rotate(45deg);
 }
 
-.meme-container input:checked + .meme-label .meme-label-h2 {
+.meme-container input:checked+.acor-header .meme-label-h2 {
     color: black;
 }
 
@@ -81,22 +91,13 @@ h2 {
     overflow: hidden;
     /* transition: color 0.5s, padding 0.5s; */
     transition: all 1s ease-in;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.meme-container input:checked + label + .acor-content {
+.meme-container input:checked+.acor-header+.acor-content {
     max-height: 100%;
     opacity: 1;
-    padding: 20px 30px 10px;
-    transition: all 0.5s ease-in
-}
-
-
-
-.meme-container .acor-content {
-    padding: 0 30px;
-    /* transition: color 0.5s, padding 0.5s; */
-
+    /* transition: all 0.5s ease-in */
 }
 
 .meme-container input {
@@ -107,37 +108,46 @@ h2 {
     padding: 1 rem;
 }
 
-.meme-label {
-    display: block;
-    padding: 0.1% 0%;
-    margin: 0% 5%;
-    background: rgb(30, 210, 114);
-}
-
-@media (min-width: 820px) {
-    .meme-label {
-        /* padding: 0.1% 0%;
-        margin: 0% 25%; */
-    }
-    .meme-container{
-        padding: 0.1% 0%;
-        margin: 0% 25%;
-    }
-    .meme-container:hover .meme-label .meme-label-h2::after {
+@media screen and (hover: hover) {
+    .meme-container:hover .acor-header .icon-open {
         opacity: 1;
     }
+
     .meme-container:hover .meme-label .meme-label-h2 {
         color: black;
     }
 
-    .meme-block:hover ~ .acor-content {
+    .meme-container input:hover~.acor-content {
         max-height: 100%;
         opacity: 1;
         transition: all 0.5s ease-in
     }
-
 }
 
-.acor-content {}
+@media (min-width: 820px) {
+
+    .meme-img {
+        width: 30vw;
+    }
+
+    .acor-header {
+        display: flex;
+        justify-content: space-between;
+        border-top: 0.03rem solid black;
+    }
+
+    .icon-open {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .meme-container {
+        margin: 0 20%;
+    }
+
+
+}
 
 /* git commit -m "init: add README($(get-date -format U))" */

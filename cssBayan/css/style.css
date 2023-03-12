@@ -56,6 +56,7 @@ header h1 {
 
 .meme-label {
     cursor: pointer;
+    display: block;
 }
 
 .meme-label-h2 {
@@ -94,10 +95,14 @@ header h1 {
     cursor: pointer;
 }
 
-.meme-container input:checked+.acor-header+.acor-content {
+.meme-container input:checked +.acor-header+.acor-content {
     max-height: 100%;
     opacity: 1;
     /* transition: all 0.5s ease-in */
+}
+
+.meme-label:active {
+    opacity: 0.6;
 }
 
 .meme-container input {
@@ -147,7 +152,4 @@ header h1 {
         margin: 0 20%;
     }
 
-
 }
-
-/* git commit -m "init: add README($(get-date -format U))" */

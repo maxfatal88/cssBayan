@@ -95,7 +95,7 @@ header h1 {
     cursor: pointer;
 }
 
-.meme-container input:checked +.acor-header+.acor-content {
+.meme-container input:checked+.acor-header+.acor-content {
     max-height: 100%;
     opacity: 1;
     /* transition: all 0.5s ease-in */
@@ -103,6 +103,7 @@ header h1 {
 
 .meme-label:active {
     opacity: 0.6;
+    color: blue;
 }
 
 .meme-container input {
@@ -120,6 +121,22 @@ header h1 {
 
     .meme-container:hover .meme-label .meme-label-h2 {
         color: black;
+    }
+
+    .meme-label:active #meme1 {
+        color: blue;
+    }
+
+    .meme-label:active #meme2 {
+        color: blue;
+    }
+
+    .meme-label:active #meme3 {
+        color: blue;
+    }
+
+    .meme-label:active #meme4 {
+        color: blue;
     }
 
     .meme-container input:hover~.acor-content {

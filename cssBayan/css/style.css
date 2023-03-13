@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    background-color: blanchedalmond;
+}
+
+h1 {
+    font-size: 2em;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 820px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 3.5em;
+    }
+}
+
+h2 {
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 820px) {
+    h2 {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1920px) {
+    h2 {
+        font-size: 2.5em;
+    }
+}
+
+.meme-img {
+    width: 50vw;
+    margin: 0.9em;
+}
+
+.section-meme {
+    margin: 1rem 0;
+
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.meme-label {
+    cursor: pointer;
+    display: block;
+}
+
+.meme-label-h2 {
+    color: blue;
+}
+
+.meme-label-h2 {
+    display: flex;
+    justify-content: center;
+    padding: 0.2em;
+}
+
+.icon-open {
+    display: none;
+    opacity: 0;
+    transition: transform .35s;
+}
+
+.meme-container input:checked+.acor-header .icon-open {
+    transition: transform .35s;
+    transform: rotate(45deg);
+}
+
+.meme-container input:checked+.acor-header .meme-label-h2 {
+    color: black;
+}
+
+.acor-content {
+    display: flex;
+    justify-content: center;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    /* transition: color 0.5s, padding 0.5s; */
+    transition: all 1s ease-in;
+    cursor: pointer;
+}
+
+.meme-container input:checked+.acor-header+.acor-content {
+    max-height: 100%;
+    opacity: 1;
+    /* transition: all 0.5s ease-in */
+}
+
+.meme-label:active {
+    opacity: 0.6;
+    color: blue;
+}
+
+.meme-container input {
+    display: none;
+}
+
+.meme-container label {
+    padding: 1 rem;
+}
+
+@media screen and (hover: hover) {
+    .meme-container:hover .acor-header .icon-open {
+        opacity: 1;
+    }
+
+    .meme-container:hover .meme-label .meme-label-h2 {
+        color: black;
+    }
+
+    .meme-label:active #meme1 {
+        color: blue;
+    }
+
+    .meme-label:active #meme2 {
+        color: blue;
+    }
+
+    .meme-label:active #meme3 {
+        color: blue;
+    }
+
+    .meme-label:active #meme4 {
+        color: blue;
+    }
+
+    .meme-container input:hover~.acor-content {
+        max-height: 100%;
+        opacity: 1;
+        transition: all 0.5s ease-in
+    }
+}
+
+@media (min-width: 820px) {
+
+    .meme-img {
+        width: 30vw;
+    }
+
+    .acor-header {
+        display: flex;
+        justify-content: space-between;
+        border-top: 0.03rem solid black;
+    }
+
+    .icon-open {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .meme-container {
+        margin: 0 20%;
+    }
+
+}
